@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <h2>My Uganda</h2>
+ 
+    <div  style="margin:4px" *ngFor="let region of regions; index as i">
+     
+        <app-region-display [region]="region"></app-region-display>
+        <!-- <div
+          class="btn btn-secondary"
+          style="margin:2px"
+          *ngFor="let district of region.districts; index as i"
+          (click)="showSubCounties(i)"
+        >
+        <div>
+          {{district?.name}}
+        </div>
+          <li
+            class="collapse"
+            id="subCounty"
+            *ngFor="let subcounty of district?.subCounties"
+          >
+            {{ subcounty?.name }}
+          </li> -->
+        <!-- </div> -->
+   
+    </div>
+  </div>
+
+  

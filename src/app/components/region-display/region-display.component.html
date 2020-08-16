@@ -1,0 +1,29 @@
+
+  <div [routerLink]="['/region', region.name]">
+  <!-- <div class="card"  style="margin:4px" *ngFor="let region of regions; index as i"> -->
+    <div class="card"  style="margin:4px">
+    
+      <h5 class="card-title">{{ region.name }}</h5>
+      <a href="#" class="btn btn-secondary">Details</a> 
+      <!-- <app-region-thumbnail [hidden]="!viewRegionDetails" [region]="region"></app-region-thumbnail> -->
+      <!-- <div
+        class="btn btn-secondary"
+        style="margin:2px"
+        *ngFor="let district of region.districts; index as i"
+        (click)="showSubCounties(i)"
+      >
+      <div>
+        {{district?.name}}
+      </div>
+        <li
+          class="collapse"
+          id="subCounty"
+          *ngFor="let subcounty of district?.subCounties"
+        >
+          {{ subcounty?.name }}
+        </li> -->
+      <!-- </div> -->
+  
+  
+</div>
+</div>

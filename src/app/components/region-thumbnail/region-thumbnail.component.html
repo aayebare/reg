@@ -1,0 +1,46 @@
+<!-- <div></div> -->
+    <div class="card"  style="margin:4px" *ngFor="let region of regions">
+      <div class="card-body" *ngIf="region.name==region">
+        <h5 class="card-title">{{ region?.name }}</h5>
+        <!-- <div
+          class="btn btn-secondary"
+          style="margin:2px"
+          data-toggle="collapse"
+          data-target="#subCounty"
+          [attr.aria-expanded]="!isCollapsed" 
+          aria-controls="subCounty"
+          *ngFor="let district of region.districts; index as i"
+          (click)="showSubCounties(i)"
+        >
+        <div>
+          {{district?.name}}
+        </div>
+          <li
+            class="collapse"
+            id="subCounty"
+            *ngFor="let subcounty of district?.subCounties"
+          >
+            {{ subcounty?.name }}
+          </li>
+        </div> -->
+
+        <div
+        class="btn btn-secondary"
+        style="margin:2px"
+        *ngFor="let district of region.districts; index as i"
+      >
+      <div>
+        {{district?.name}}
+      </div>
+        <li
+          class="collapse"
+          id="subCounty"
+          *ngFor="let subcounty of district?.subCounties"
+        >
+          {{ subcounty?.name }}
+        </li>
+      </div>
+      </div>
+    </div>
+  
+  
