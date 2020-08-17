@@ -5,24 +5,24 @@ import { RegionserviceService } from '../../services/regionservice.service';
 @Component({
   selector: 'app-region-thumbnail',
   templateUrl: './region-thumbnail.component.html',
-  styleUrls: ['./region-thumbnail.component.css']
+  styleUrls: ['./region-thumbnail.component.css'],
 })
 export class RegionThumbnailComponent implements OnInit {
   regions: any;
   region: any;
 
-  constructor(private regionService: RegionserviceService,  private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private regionService: RegionserviceService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.regionService.getRegions().subscribe((result:any) => {
-      this.regions = result
-      this.region = this.activatedRoute.snapshot.params['name']
-      console.log(this.region, '999')
-    },
-    err => alert(err)
-
-  )
-
+    this.regionService.getRegions().subscribe(
+      (result: any) => {
+        this.regions = result;
+        this.region = this.activatedRoute.snapshot.params['name'];
+      },
+      (err) => alert(err)
+    );
   }
-
 }
