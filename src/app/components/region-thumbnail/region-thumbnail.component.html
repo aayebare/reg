@@ -1,46 +1,37 @@
-<!-- <div></div> -->
-    <div class="card"  style="margin:4px" *ngFor="let region of regions">
-      <div class="card-body" *ngIf="region.name==region">
-        <h5 class="card-title">{{ region?.name }}</h5>
-        <!-- <div
-          class="btn btn-secondary"
-          style="margin:2px"
-          data-toggle="collapse"
-          data-target="#subCounty"
-          [attr.aria-expanded]="!isCollapsed" 
-          aria-controls="subCounty"
-          *ngFor="let district of region.districts; index as i"
-          (click)="showSubCounties(i)"
-        >
-        <div>
-          {{district?.name}}
-        </div>
-          <li
-            class="collapse"
-            id="subCounty"
-            *ngFor="let subcounty of district?.subCounties"
-          >
-            {{ subcounty?.name }}
-          </li>
-        </div> -->
+<div style="margin: 4px;" *ngFor="let area of regions">
+  <div class="card-body" *ngIf="area?.name === region">
+    <h2 class="card-title"><strong>Region: </strong>{{ area?.name }}</h2>
+    <hr style="border: 1px solid rgba(14, 13, 13, 0.1);"/>
+    <div
+      class="card"
+      style="margin: 5%;"
+      *ngFor="let district of area.districts; index as i"
+    >
+      <strong>District {{ i + 1 }}: </strong>
+      <div class="card">
+        <p>{{ district?.name }}</p>
 
-        <div
-        class="btn btn-secondary"
-        style="margin:2px"
-        *ngFor="let district of region.districts; index as i"
-      >
-      <div>
-        {{district?.name}}
-      </div>
-        <li
-          class="collapse"
-          id="subCounty"
-          *ngFor="let subcounty of district?.subCounties"
+        <span
+          class="{{
+            district?.isActive === true
+              ? 'badge badge-success'
+              : 'badge badge-danger'
+          }}"
+          >IsActive</span
         >
-          {{ subcounty?.name }}
-        </li>
       </div>
-      </div>
+      <strong>Sub-Counties: </strong>
+      <li class="card" *ngFor="let subcounty of district?.subCounties">
+        {{ subcounty?.name }}
+        <span
+          class="{{
+            subcounty?.isActive === true
+              ? 'badge badge-success'
+              : 'badge badge-danger'
+          }}"
+          >IsActive</span
+        >
+      </li>
     </div>
-  
-  
+  </div>
+</div>

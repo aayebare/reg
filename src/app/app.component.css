@@ -1,5 +1,4 @@
 .regions-body {
-    padding-left:5%;
-    padding-right: 5%;
-  }
-  
+  padding: 2% 5% 0% 20%;
+  display: block;
+}
